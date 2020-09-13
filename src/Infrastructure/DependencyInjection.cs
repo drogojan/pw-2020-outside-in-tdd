@@ -3,6 +3,7 @@ using OpenChat.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OpenChat.Infrastructure.Services;
 
 namespace OpenChat.Infrastructure
 {
@@ -27,6 +28,7 @@ namespace OpenChat.Infrastructure
             }
 
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+            services.AddScoped<IGuidGenerator, GuidGenerator>();
 
             return services;
         }
