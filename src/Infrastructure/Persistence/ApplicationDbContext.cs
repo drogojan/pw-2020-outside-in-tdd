@@ -17,5 +17,7 @@ namespace OpenChat.Infrastructure.Persistence
 
             base.OnModelCreating(builder);
         }
+
+        public DbSet<User> Users { get; set; }
     }
 }
